@@ -100,7 +100,7 @@ namespace UnityStandardAssets._2D
 
                 // Limit vertical speed of RigidBody
                 if (m_IsInWater) {
-                    Debug.Log("Vertical speed of me: " + m_Rigidbody2D.velocity.y);
+                    //Debug.Log("Vertical speed of me: " + m_Rigidbody2D.velocity.y);
                     float y = Mathf.Clamp(m_Rigidbody2D.velocity.y, Mathf.NegativeInfinity, 0);
                     m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, y);
                 }
