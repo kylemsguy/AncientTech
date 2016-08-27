@@ -10,7 +10,7 @@ namespace UnityStandardAssets._2D
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
-        public bool m_Water = false;
+        [SerializeField] private bool m_IsInWater = false;
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
         const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -91,12 +91,19 @@ namespace UnityStandardAssets._2D
                 }
             }
             // If the player should jump...
-            if ((m_Grounded || m_Water) && jump && (m_Anim.GetBool("Ground") || m_Water))
+            if ((m_Grounded || m_IsInWater) && jump && (m_Anim.GetBool("Ground") || m_IsInWater))
             {
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+
+                // Limit vertical speed of RigidBody
+                if (m_IsInWater) {
+                    Debug.Log("Vertical speed of me: " + m_Rigidbody2D.velocity.y);
+                    float y = Mathf.Clamp(m_Rigidbody2D.velocity.y, Mathf.NegativeInfinity, 0);
+                    m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, y);
+                }
             }
         }
 
