@@ -1,0 +1,30 @@
+<canvas id="m" width="512" height="128"></canvas>
+<script>
+var canvas = document.getElementById("m");
+var ctx = canvas.getContext("2d");
+var width = 128;
+ctx.strokeStyle="#999999";
+ctx.lineWidth=4;
+function spike(xoff) {
+	ctx.fillStyle="#cccccc";
+	ctx.beginPath();
+	ctx.moveTo(xoff, 128);
+	ctx.lineTo(xoff+128/2, 0);
+	ctx.lineTo(xoff+128/2, 128);
+	ctx.closePath();
+	ctx.fill();
+	ctx.beginPath();
+	ctx.fillStyle="#aaaaaa";
+	ctx.moveTo(xoff+128/2, 128);
+	ctx.lineTo(xoff+128/2, 0);
+	ctx.lineTo(xoff+128, 128);
+	ctx.closePath();
+	ctx.fill();
+	ctx.beginPath();
+	ctx.moveTo(xoff, 128);
+	ctx.lineTo(xoff+128/2, 4);
+	ctx.lineTo(xoff+128,128);
+	ctx.stroke();
+}
+for (var i = 0; i < 4; i++) spike(i*128);
+</script>
