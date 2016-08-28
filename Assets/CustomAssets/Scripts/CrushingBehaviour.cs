@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
+using UnityStandardAssets._2D;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class CrushingBehaviour : MonoBehaviour {
+public class CrushingBehaviour : DeathBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void OnCollisonEnter2D(Collider2D other)
+    protected void OnCollisionEnter2D(Collision2D coll)
     {
-
+        Collider2D other = coll.collider;
+        if (other.tag == "Player")
+        {
+            PlatformerCharacter2D player = other.GetComponent<PlatformerCharacter2D>();
+            Debug.Log(player.isGrounded());
+            if (player.isGrounded() && coll.relativeVelocity.y > 100)
+            {
+                base.OnTriggerEnter2D(other);
+            }
+        }
     }
 }

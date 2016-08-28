@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000013140573908}
   - 212: {fileID: 212000014148156484}
   - 61: {fileID: 61000010266771830}
-  - 114: {fileID: 114000012094451862}
+  - 114: {fileID: 114000013434646034}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -56,7 +56,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5.12, y: 1.28}
---- !u!114 &114000012094451862
+--- !u!114 &114000013434646034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -64,9 +64,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010138491018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e053b0a94752146e79954ce4df1b5565, type: 3}
+  m_Script: {fileID: 11500000, guid: f41166fedb4660640ad28ba5e4bfa425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BGMSource: {fileID: 0}
+  m_DeathClip: {fileID: 0}
 --- !u!212 &212000014148156484
 SpriteRenderer:
   m_ObjectHideFlags: 1
