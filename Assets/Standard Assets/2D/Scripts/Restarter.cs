@@ -34,10 +34,6 @@ namespace UnityStandardAssets._2D
                 }
                 else
                 {
-                    StopAllAudio();
-                    m_BGMSource.PlayOneShot(m_DeathClip);
-                    // stop time
-                    Time.timeScale = 0;
                     StartCoroutine("WaitForDeath");
                 }
             }
@@ -45,6 +41,10 @@ namespace UnityStandardAssets._2D
 
         private IEnumerator WaitForDeath()
         {
+            StopAllAudio();
+            m_BGMSource.PlayOneShot(m_DeathClip);
+            // stop time
+            Time.timeScale = 0;
             yield return StartCoroutine(CoroutineUtilities.WaitForRealTime(1));
             SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
             Time.timeScale = 1;
