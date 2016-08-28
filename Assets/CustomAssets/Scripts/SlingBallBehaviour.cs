@@ -9,6 +9,7 @@ public class SlingBallBehaviour : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player") return;
         var particles = Instantiate(m_DeathParticleSystem, transform.position, Quaternion.identity);
         Destroy(particles, 1);
         Destroy(gameObject);
