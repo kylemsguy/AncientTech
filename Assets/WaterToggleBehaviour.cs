@@ -10,8 +10,14 @@ public class WaterToggleBehaviour : MonoBehaviour {
     [SerializeField] Slider m_OxyValueDisplay;
     [SerializeField] Image m_OxyBarFill;
     [SerializeField] Text m_OxyDebugValue;
-    [SerializeField] Image m_UnderwaterDisplay;
+    [SerializeField] AudioSource m_SoundEffectSource;
+    [SerializeField] AudioClip m_OutOfBreathSE;
+    [SerializeField] AudioClip m_BreatheInSE;
+    [SerializeField] AudioClip m_BreatheOutSE;
     bool m_HasOxygen = false;
+    bool m_PlayingRefillSound = false;
+    bool m_PlayedBreatheInSound = false;
+    bool m_PlayedBreatheOutSound = false;
     float m_CurrentOxygen;
     Camera m_Camera;
     Rigidbody2D m_Rigid2D;
@@ -30,15 +36,36 @@ public class WaterToggleBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GlobalVars.isInWater = CrossPlatformInputManager.GetButton("Water");
-        if (m_OxyBarFill)
+        
+        if (m_HasOxygen)
         {
-            if (m_HasOxygen)
+            if (m_OxyBarFill)
                 m_OxyBarFill.color = Color.blue;
-            else
-                m_OxyBarFill.color = Color.red;
+            if (m_PlayingRefillSound)
+            {
+                m_PlayingRefillSound = false;
+                m_SoundEffectSource.Stop();
+            }
         }
+        else
+        {
+            if (m_OxyBarFill)
+                m_OxyBarFill.color = Color.red;
+            if (m_OutOfBreathSE && !m_PlayingRefillSound)
+            {
+                m_PlayingRefillSound = true;
+                m_SoundEffectSource.PlayOneShot(m_OutOfBreathSE);
+            }
+        }
+
         if (GlobalVars.isInWater && checkOxygen())
         {
+            if (!m_PlayedBreatheInSound)
+            {
+                m_PlayedBreatheInSound = true;
+                m_PlayedBreatheOutSound = false;
+                m_SoundEffectSource.PlayOneShot(m_BreatheInSE);
+            }
             if(m_OxyBarFill)
                 m_OxyBarFill.color = m_DrainingBlue;
             m_CurrentOxygen -= 1.0f * Time.deltaTime;
@@ -47,6 +74,12 @@ public class WaterToggleBehaviour : MonoBehaviour {
         }
         else
         {
+            if (!m_PlayedBreatheOutSound)
+            {
+                m_PlayedBreatheOutSound = true;
+                m_PlayedBreatheInSound = false;
+                m_SoundEffectSource.PlayOneShot(m_BreatheOutSE);
+            }
             GlobalVars.isInWater = false;
             if (m_CurrentOxygen < m_MaxOxygen)
                 m_CurrentOxygen += m_RegenRate * Time.deltaTime;

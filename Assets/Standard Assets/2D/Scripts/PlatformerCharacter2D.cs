@@ -10,6 +10,8 @@ namespace UnityStandardAssets._2D
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
         [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+        [SerializeField] private AudioSource m_AudioSource;
+        [SerializeField] private AudioClip m_JumpAudioClip;
         [SerializeField] private bool m_IsInWater = false;
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
@@ -94,6 +96,12 @@ namespace UnityStandardAssets._2D
             // If the player should jump...
             if ((m_Grounded || m_IsInWater) && jump && (m_Anim.GetBool("Ground") || m_IsInWater))
             {
+                // Play sound effect
+                if (m_AudioSource && m_JumpAudioClip)
+                {
+                    m_AudioSource.PlayOneShot(m_JumpAudioClip);
+                }
+
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
