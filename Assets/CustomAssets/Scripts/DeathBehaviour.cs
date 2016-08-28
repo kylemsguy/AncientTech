@@ -51,6 +51,9 @@ public class DeathBehaviour : MonoBehaviour
     private void StopAllAudio()
     {
         foreach(var source in m_AllAudioSources)
+        {
+            if (source == null) continue;
             source.Stop();
+        }
     }
 }
