@@ -12,5 +12,8 @@ public class SlingBallBehaviour : MonoBehaviour {
         var particles = Instantiate(m_DeathParticleSystem, transform.position, Quaternion.identity);
         Destroy(particles, 1);
         Destroy(gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Float")) {
+            Destroy(other.gameObject.GetComponentInParent<Rigidbody2D>().gameObject);
+        }
     }
 }
