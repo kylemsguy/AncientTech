@@ -1636,6 +1636,11 @@ Prefab:
       propertyPath: m_BGMSource
       value: 
       objectReference: {fileID: 1322545584}
+    - target: {fileID: 114000012094451862, guid: 365e511db5d5dfc419de662103512117,
+        type: 2}
+      propertyPath: m_DeathClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 365e511db5d5dfc419de662103512117, type: 2}
   m_IsPrefabParent: 0
@@ -13348,6 +13353,10 @@ Prefab:
       propertyPath: m_BGMSource
       value: 
       objectReference: {fileID: 1322545584}
+    - target: {fileID: 11400000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+      propertyPath: m_DeathClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f8197a534465544db144fc0a4c9a4f1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
   m_IsPrefabParent: 0
