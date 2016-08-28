@@ -150,32 +150,32 @@ Prefab:
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012805547896, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
@@ -195,6 +195,16 @@ Prefab:
     - target: {fileID: 224000013239807622, guid: 8014a553205c32f48b2c8422196b1158,
         type: 2}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013633399322, guid: 8014a553205c32f48b2c8422196b1158,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013633399322, guid: 8014a553205c32f48b2c8422196b1158,
+        type: 2}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -571,6 +581,15 @@ Prefab:
       propertyPath: m_IsInWater
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee9a7100c31f2df44a990c752a1fda21,
+        type: 3}
+    - target: {fileID: 9500000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e34e247c235945246b39c83ac4ce8401, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
   m_IsPrefabParent: 0
