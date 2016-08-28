@@ -8668,6 +8668,11 @@ Prefab:
       propertyPath: m_BreatheOutSE
       value: 
       objectReference: {fileID: 8300000, guid: d9327c0b4d4acdb44bf47a77379e0857, type: 3}
+    - target: {fileID: 114000010961690222, guid: 4b5fc8c33789d094ea2743d94a0ca312,
+        type: 2}
+      propertyPath: m_BGMSource
+      value: 
+      objectReference: {fileID: 1322545584}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b5fc8c33789d094ea2743d94a0ca312, type: 2}
   m_IsPrefabParent: 0
@@ -8804,6 +8809,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1322545583}
   - 82: {fileID: 1322545584}
+  - 169: {fileID: 1322545585}
   m_Layer: 0
   m_Name: BGMSource
   m_TagString: Untagged
@@ -8892,6 +8898,26 @@ AudioSource:
     m_Curve:
     - time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!169 &1322545585
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322545582}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.22727273
       inSlope: 0
       outSlope: 0
       tangentMode: 0

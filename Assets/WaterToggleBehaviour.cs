@@ -10,6 +10,7 @@ public class WaterToggleBehaviour : MonoBehaviour {
     [SerializeField] Slider m_OxyValueDisplay;
     [SerializeField] Image m_OxyBarFill;
     [SerializeField] Text m_OxyDebugValue;
+    [SerializeField] AudioSource m_BGMSource;
     [SerializeField] AudioSource m_SoundEffectSource;
     [SerializeField] AudioClip m_OutOfBreathSE;
     [SerializeField] AudioClip m_BreatheInSE;
@@ -34,7 +35,7 @@ public class WaterToggleBehaviour : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         GlobalVars.isInWater = CrossPlatformInputManager.GetButton("Water");
         
         if (m_HasOxygen)
@@ -60,6 +61,8 @@ public class WaterToggleBehaviour : MonoBehaviour {
 
         if (GlobalVars.isInWater && checkOxygen())
         {
+            if (m_BGMSource)
+                m_BGMSource.GetComponent<AudioLowPassFilter>().enabled = true;
             if (!m_PlayedBreatheInSound)
             {
                 m_PlayedBreatheInSound = true;
@@ -74,6 +77,8 @@ public class WaterToggleBehaviour : MonoBehaviour {
         }
         else
         {
+            if (m_BGMSource)
+                m_BGMSource.GetComponent<AudioLowPassFilter>().enabled = false;
             if (!m_PlayedBreatheOutSound)
             {
                 m_PlayedBreatheOutSound = true;
