@@ -1,0 +1,54 @@
+<canvas id="m" width="128" height="128"></canvas>
+<script>
+var canvas = document.getElementById("m");
+var ctx = canvas.getContext("2d");
+var width = 128;
+ctx.strokeStyle="#999999";
+ctx.lineWidth=4;
+function drawMe(stretch) {
+	ctx.clearRect(0, 0, 128, 128);
+	ctx.fillStyle="#000000";
+	ctx.strokeStyle="#775533";
+	ctx.beginPath();
+	ctx.moveTo(2, 32);
+	ctx.lineTo(16,96);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(16,96);
+	ctx.lineTo(16,128);
+	ctx.stroke();
+	ctx.strokeStyle="#bbaa88";
+	ctx.beginPath();
+	ctx.moveTo(0, 32);
+	ctx.lineTo(16+stretch*(64/15), 32);
+	ctx.stroke();
+	// ball
+	ctx.fillStyle="#aaaaaa";
+	ctx.strokeStyle="#888888";
+	ctx.beginPath();
+	ctx.ellipse(32+2+stretch*(64/15), 48, 32, 32, 0, 0, Math.PI*2, false);
+	ctx.fill();
+	ctx.stroke();
+	ctx.strokeStyle="#997755";
+	ctx.beginPath();
+	ctx.moveTo(16,96);
+	ctx.lineTo(28,8+32);
+	ctx.stroke();
+	ctx.strokeStyle="#ccaa99";
+
+	ctx.beginPath();
+	ctx.moveTo(28, 8+32);
+	ctx.lineTo(64+stretch*(64/15), 8+32);
+	ctx.stroke();
+}
+function dumpCanvas() {
+	var img = document.createElement("img");
+	img.src = canvas.toDataURL();
+	document.body.appendChild(img);
+}
+//for (var i = 0; i < 4; i++) spike(i*128);
+for (var i = 0; i < 15; i++) {
+	drawMe(i);
+	dumpCanvas();
+}
+</script>
