@@ -50,10 +50,11 @@ namespace UnityStandardAssets._2D
             Time.timeScale = 1;
         }
 
-        private void StopAllAudio()
-        {
-            foreach(var source in m_AllAudioSources)
+        private void StopAllAudio() {
+            foreach (var source in m_AllAudioSources) {
+                if (source == null) continue;
                 source.Stop();
+            }
         }
     }
 }
