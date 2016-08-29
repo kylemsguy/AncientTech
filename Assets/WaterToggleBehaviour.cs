@@ -18,7 +18,7 @@ public class WaterToggleBehaviour : MonoBehaviour {
     bool m_HasOxygen = false;
     bool m_PlayingRefillSound = false;
     bool m_PlayedBreatheInSound = false;
-    bool m_PlayedBreatheOutSound = false;
+    bool m_PlayedBreatheOutSound = true;
     float m_CurrentOxygen;
     Camera m_Camera;
     Rigidbody2D m_Rigid2D;

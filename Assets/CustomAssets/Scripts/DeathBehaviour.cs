@@ -22,7 +22,7 @@ public class DeathBehaviour : MonoBehaviour
         m_AllAudioSources = FindObjectsOfType<AudioSource>();
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
