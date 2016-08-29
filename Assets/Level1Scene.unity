@@ -12461,6 +12461,11 @@ Prefab:
       propertyPath: m_BGMSource
       value: 
       objectReference: {fileID: 1322545584}
+    - target: {fileID: 95000012078678798, guid: 4b5fc8c33789d094ea2743d94a0ca312,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0e93720b609570c4c82804998d4d0443, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b5fc8c33789d094ea2743d94a0ca312, type: 2}
   m_IsPrefabParent: 0

@@ -13,7 +13,7 @@ public class CrushingBehaviour : DeathBehaviour {
         {
             PlatformerCharacter2D player = other.GetComponent<PlatformerCharacter2D>();
             Debug.Log(player.isGrounded());
-            if (player.isGrounded() && )
+            if (player.isGrounded())
             {
                 base.OnTriggerEnter2D(other);
             }
