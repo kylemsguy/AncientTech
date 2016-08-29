@@ -19,6 +19,8 @@ public class EndLevelBehaviour : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            GlobalVars.isInWater = false;
+            GlobalVars.hasCheckpoint = false;
             SceneManager.LoadScene(m_NextSceneID);
         }
     }   

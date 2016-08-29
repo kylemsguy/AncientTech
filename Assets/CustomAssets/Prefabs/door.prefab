@@ -23,7 +23,7 @@ GameObject:
   - 61: {fileID: 61000010705376576}
   - 114: {fileID: 114000010299052906}
   m_Layer: 0
-  m_Name: ToNextLevel
+  m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
