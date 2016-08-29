@@ -86,7 +86,7 @@ GameObject:
   - 4: {fileID: 4000014026587462}
   - 212: {fileID: 212000012318654098}
   - 61: {fileID: 61000011142538548}
-  - 114: {fileID: 114000014239408226}
+  - 114: {fileID: 114000013962715620}
   m_Layer: 0
   m_Name: Spikes (1)
   m_TagString: Untagged
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa25cc98f385ab34cb53a4395c0cad45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000014239408226
+--- !u!114 &114000013962715620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -375,9 +375,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011367630318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e053b0a94752146e79954ce4df1b5565, type: 3}
+  m_Script: {fileID: 11500000, guid: f41166fedb4660640ad28ba5e4bfa425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BGMSource: {fileID: 0}
+  m_DeathClip: {fileID: 0}
 --- !u!212 &212000010168018038
 SpriteRenderer:
   m_ObjectHideFlags: 1
